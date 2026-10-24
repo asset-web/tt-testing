@@ -1,20 +1,56 @@
+const menuItems = [
+    'Home',
+    'Project Information',
+    'About The Team',
+    'Project Details',
+    'TORCH',
+    'Researcher’s Notes',
+];
+
 Cypress.Commands.add('navigateMenu', (wrapperClass) => {
+    cy.get(wrapperClass).scrollIntoView();
+    menuItems.forEach((item) => {
+        cy.get(wrapperClass).contains(item).click();
+        cy.get(".page-title").contains(item);
+    });
+})
 
-    cy.contains('Home').should('be.visible');
-    cy.get(wrapperClass).contains('Home').should('be.visible');
+Cypress.Commands.add('navigateSubMenu', (wrapperClass, parentMenuItems, subMenuItems) => {
+    cy.get(wrapperClass).scrollIntoView();
+    subMenuItems.forEach((item) => {
+        for (const parentMenu of parentMenuItems) {
+            cy.get(wrapperClass).contains(parentMenu).trigger('mouseover');
+        }
+        cy.get(wrapperClass).contains(item).click();
+        cy.get(".page-title").contains(item);
+    });
+})
 
-    cy.contains('Project Information').should('be.visible').click();
-    cy.get(wrapperClass).contains('Project Information').should('be.visible');
+Cypress.Commands.add('navigateProjectDetailsSubMenu', (wrapperClass) => {
+    const subMenuItems = [
+        'Project Sites',
+        'Notes About the Set From Set Designer, Carol Sorhaindo',
+        'Building The Performance Script',
+        'References',
+    ];
+    cy.navigateSubMenu(wrapperClass, ["Project Details"], subMenuItems);
+})
 
-    cy.contains('About The Team').should('be.visible').click();
-    cy.get(wrapperClass).contains('About The Team').should('be.visible');
+Cypress.Commands.add('navigateReferencesSubMenu', (wrapperClass) => {
+    const subMenuItems = [
+        'Quantum Moments',
+    ];
+    cy.navigateSubMenu(wrapperClass, ["Project Details", "References"], subMenuItems);
+})
 
-    cy.contains('Project Details').should('be.visible').click();
-    cy.get(wrapperClass).contains('Project Details').should('be.visible');
-
-    cy.contains('TORCH').should('be.visible').click();
-    cy.get(wrapperClass).contains('TORCH').should('be.visible');
-
-    cy.contains('Researcher’s Notes').should('be.visible').click();
-    cy.get(wrapperClass).contains('Researcher’s Notes').should('be.visible');
+Cypress.Commands.add('navigatePublicEngagementsDetailsSubMenu', (wrapperClass) => {
+    const subMenuItems = [
+		"11th April Performance Day",
+		"Open Rehearsal",
+		"Video Showing 23 May",  // Has a shorten page title
+		"The Discussion",
+		"Discussion 2",
+		"Pre-Performance Moments",
+    ];
+    cy.navigateSubMenu(wrapperClass, ["Project Details", "Public Engagements"], subMenuItems);
 })
