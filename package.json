@@ -1,0 +1,12 @@
+{
+  "name": "tt-testing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --browser chrome --headless"
+  },
+  "devDependencies": {
+    "cypress": "^16.1.1"
+  }
+}
