@@ -1,0 +1,16 @@
+name: End-to-End Cypress Tests
+
+on:
+  push:
+  schedule:
+    - cron: '5 7 * * *'
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: browser-actions/setup-chrome@v2
+      - uses: cypress-io/github-action@v7
+        with:
+          browser: chrome-for-testing
