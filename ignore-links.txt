@@ -9,3 +9,6 @@ https://wp-royal-themes.com
 
 # Access denied using robots.txt
 https://www.nature.com/subjects/quantum-physics
+
+# WordPress generated RSD link
+https://transportation-transformation.co.uk/wp-json/wp/v2/users/10
