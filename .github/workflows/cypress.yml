@@ -4,6 +4,7 @@ on:
   push:
   schedule:
     - cron: '5 7 * * *'
+  workflow_dispatch:
 
 jobs:
   cypress-run:
