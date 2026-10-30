@@ -16,4 +16,4 @@ jobs:
       - name: Check links with linkcheck
         uses: filiph/linkcheck@3.0.0
         with:
-          arguments: https://transportation-transformation.co.uk -e
+          arguments: -e --skip-file=ignore-links.txt https://transportation-transformation.co.uk
