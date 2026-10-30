@@ -1,0 +1,19 @@
+
+
+
+name: Link Checker
+
+on:
+  schedule:
+    - cron: '7 7 7 * *'
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check links with linkcheck
+        uses: filiph/linkcheck@3.0.0
+        with:
+          url: https://transportation-transformation.co.uk
