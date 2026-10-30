@@ -16,4 +16,4 @@ jobs:
       - name: Check links with linkcheck
         uses: filiph/linkcheck@3.0.0
         with:
-          url: https://transportation-transformation.co.uk
+          arguments: https://transportation-transformation.co.uk -e
