@@ -2,7 +2,7 @@
 https://fonts.googleapis.com
 
 # 401 for linkcheck only
-https://player.vimeo.com/video/\.
+https://player.vimeo.com/video/
 
 # 403 for linkcheck only
 https://wp-royal-themes.com
