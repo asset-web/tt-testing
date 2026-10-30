@@ -1,0 +1,14 @@
+# dns-prefetch
+https://fonts.googleapis.com
+
+# 401 for linkcheck only
+https://player.vimeo.com/video/
+
+# 403 for linkcheck only
+https://wp-royal-themes.com
+
+# Access denied using robots.txt
+https://www.nature.com/subjects/quantum-physics
+
+# WordPress generated RSD link
+\.wp-json
