@@ -14,3 +14,4 @@ Install dependencies with `npm install`.
 
 - Run tests in the interactive Cypress runner with `npm run cypress:open`.
 - Run tests headlessly with `npm run cypress:run`.
+- Update Cypress `npm install cypress --save-dep`
