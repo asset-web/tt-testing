@@ -7,6 +7,6 @@
     "cypress:run": "cypress run --browser chrome --headless"
   },
   "devDependencies": {
-    "cypress": "^16.2.1"
+    "cypress": "^16.3.0"
   }
 }
